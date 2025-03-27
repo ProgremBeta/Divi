@@ -1,11 +1,11 @@
-import React, { cloneElement } from "react";
+import React from "react";
 import { View,Text,TouchableOpacity,StyleSheet } from "react-native";
 
-function Home(){
+function Home({navigation}){
 
     var Debes = 100
     var TeDeben = 1000
-    var Balance = Debes + TeDeben
+    var Balance = TeDeben - Debes
 
     return(
         <View style={styles.ContenidoPrincipal}>
@@ -18,16 +18,16 @@ function Home(){
             </View>
 
             <View style={styles.Cuadro1}>
-                <TouchableOpacity style={styles.Cuadro2}>
+                <TouchableOpacity style = {styles.Cuadro2} onPress={()=> navigation.navigate('Listas') }>
                     <Text>Lista D/A</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style = {styles.Cuadro2}>
+                <TouchableOpacity style = {styles.Cuadro2} onPress={()=> navigation.navigate('Movimientos') }>
                     <Text>Movimientos</Text>
                 </TouchableOpacity>
             </View>
             
-            <TouchableOpacity style={styles.BotonRapido}>
+            <TouchableOpacity style={styles.BotonRapido} onPress={()=> navigation.navigate('Rapido')}>
                  <Text style={{fontSize : 30}}>+</Text>
             </TouchableOpacity>
         </View>
