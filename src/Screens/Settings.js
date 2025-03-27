@@ -4,7 +4,7 @@ import { View,Text,Button } from "react-native";
 function Settings(){
     return(
         <View>
-            <Text>Estas en el apartado de ajustes</Text>
+            <Text style={{fontSize:20, textAlign:'center'}}>ajustes</Text>
         </View>
     )
 }
